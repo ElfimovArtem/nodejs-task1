@@ -1,6 +1,6 @@
-const csv = require('csvtojson');
-const fs = require('fs');
-const paths = require('./constants');
+import csv from 'csvtojson';
+import fs from 'fs';
+import paths from './constants';
 
 const writeText = fs.createWriteStream(paths.DEFAULT_TEXT);
 fs.createReadStream(paths.DEFAULT_CSV)
