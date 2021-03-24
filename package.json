@@ -17,8 +17,5 @@
     "@babel/node": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
     "nodemon": "^2.0.7"
-  },
-  "devDependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.13.8"
   }
 }
