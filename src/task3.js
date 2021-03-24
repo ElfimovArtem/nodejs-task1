@@ -1,9 +1,12 @@
 import csv from 'csvtojson';
 import fs from 'fs';
-import paths from './constants';
 
-const writeText = fs.createWriteStream(paths.DEFAULT_TEXT);
-fs.createReadStream(paths.DEFAULT_CSV)
-  .pipe(csv())
-  .on('data', (data) =>  writeText.write(data))
+const path = {
+  DEFAULT_CSV : "./files/csv.csv",
+  DEFAULT_TEXT : "./files/text.txt"
+};
+
+const writeText = fs.createWriteStream(path.DEFAULT_TEXT);
+fs.createReadStream(path.DEFAULT_CSV)
+  .pipe(csv()).pipe(writeText)
   .on('error', (er) => console.log(er));
